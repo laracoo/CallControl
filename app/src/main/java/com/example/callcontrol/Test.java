@@ -3,13 +3,19 @@ package com.example.callcontrol;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Test {
-    private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
 
     public static void main(String[] args) {
-        Json json = new Json("456", "24/04/2020", "7583937", true, "23442");
+        Map<String,String> map = new HashMap();
+        map.put("id","456789");
+        map.put("name", "Vasya");
+        map.put("number", "45637829");
 
-        String firstJSON= GSON.toJson(json);
-        System.out.println(firstJSON);
+        ConverterToJson tryJson = new ConverterToJson();
+
+        System.out.println(tryJson.converterToJson(map));
     }
 }
