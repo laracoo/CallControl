@@ -23,14 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void onStartService(View view) {
-//        Intent serviceIntent = new Intent(this, MyService.class);
-//        serviceIntent.putExtra("inputextra", "App is running");
-//
-//        ContextCompat.startForegroundService(this, serviceIntent);
-    }
-
-    public void onStopService(View view) {
+    public void onStopService(View view) { // Stop Service
         Intent serviceIntent = new Intent(this, MyService.class);
         stopService(serviceIntent);
     }

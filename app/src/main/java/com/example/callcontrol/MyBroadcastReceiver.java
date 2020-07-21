@@ -11,7 +11,7 @@ public class MyBroadcastReceiver extends BroadcastReceiver {
     public MyBroadcastReceiver() {
     }
 
-    public void onReceive(Context context, Intent intent) {
+    public void onReceive(Context context, Intent intent) { // Autostart application after phone restart
         if (intent.getAction().equals(Intent.ACTION_BOOT_COMPLETED)) {
             Toast toast = Toast.makeText(context.getApplicationContext(),
                     context.getResources().getString(R.string.your_message), Toast.LENGTH_LONG);

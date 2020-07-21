@@ -1,39 +1,45 @@
 package com.example.callcontrol;
 
-import android.Manifest;
-import android.content.BroadcastReceiver;
 import android.content.Context;
-import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
 import android.provider.CallLog;
-import android.telephony.TelephonyManager;
-
-import androidx.core.app.ActivityCompat;
-
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-public class CallReceiver {
-    private Map<String, String> getCallDetails(Context context) {
+import static com.example.callcontrol.Test.usersId;
 
-        if (ActivityCompat.checkSelfPermission(context, Manifest.permission.READ_CALL_LOG) != PackageManager.PERMISSION_GRANTED) {
-        }
-        Cursor managedCursor = context.getContentResolver().query(CallLog.Calls.CONTENT_URI, null, null, null, CallLog.Calls.DATE + " DESC");
+public class CallReceiver {
+
+    public CallReceiver() {}
+
+    public Map<String, String> getCallDetails(Context context) {
+
+        Uri allCalls = Uri.parse("content://call_log/calls");
+        //Retrieving all contact details
+        Cursor managedCursor = context.getContentResolver().query(allCalls, null, null, null, CallLog.Calls.DATE + " DESC");
         int id = managedCursor.getColumnIndex(CallLog.Calls.PHONE_ACCOUNT_ID);
         int number = managedCursor.getColumnIndex(CallLog.Calls.NUMBER);
+        int workNumber = managedCursor.getColumnIndex(CallLog.Calls.VIA_NUMBER);
         int type = managedCursor.getColumnIndex(CallLog.Calls.TYPE);
         int date = managedCursor.getColumnIndex(CallLog.Calls.DATE);
         int duration = managedCursor.getColumnIndex(CallLog.Calls.DURATION);
 
-        Map<String, String> map = new HashMap<>();
-//            String phNumber = managedCursor.getString(number);
-//            String callType = managedCursor.getString(type);
-//            String callDate = managedCursor.getString(date);
-//            String callDayTime = new Date(Long.valueOf(callDate)).toString();
-//            String callDuration = managedCursor.getString(duration);
+            if (!usersId.contains(id)) { // Checking the content of the same ID in the list
+                usersId.add(id);
+        }
+
+        Map map = new HashMap<>();
+
+        Boolean isIncoming = managedCursor.getString(type).equals("incoming");
+        // Forming a Map for translation into JSON
+            map.put("id", id);
+            map.put("data", date);
+            map.put("phone", number);
+            map.put("abonent", workNumber);
+            map.put("type", isIncoming);
+            map.put("time", duration);
+
         return map;
     }
 }
