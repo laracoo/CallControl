@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "221929494596",
+    "firebase_url": "https://callcontroler.firebaseio.com",
+    "project_id": "callcontroler",
+    "storage_bucket": "callcontroler.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:221929494596:android:90a9aea34c16c0da6e0411",
+        "android_client_info": {
+          "package_name": "com.example.callcontrol"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "221929494596-al2f5vrmm9hq5gqeo268oo7l49qlqjvm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.callcontrol",
+            "certificate_hash": "a279e16aa82fed70a0d796a0c6106637f303dd78"
+          }
+        },
+        {
+          "client_id": "221929494596-ka7rtskac5dhp2kj1mf2o5puf7o2df0d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGU8eP8aBDoA2hy7jCRYXtFiKsfxuwVAg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "221929494596-ka7rtskac5dhp2kj1mf2o5puf7o2df0d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
