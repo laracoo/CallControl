@@ -10,7 +10,7 @@ public class ConverterToJson {
 
     public ConverterToJson() {}
 
-    public String converterToJson(Map<String, String> map) { // convert Map to JSON(special library)
+    public String converterToJson(Map map) { // convert Map to JSON(special library)
         String JSON = GSON.toJson(map);
         return JSON;
     }

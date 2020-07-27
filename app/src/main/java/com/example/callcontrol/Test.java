@@ -32,9 +32,9 @@ public class Test {
 //        System.out.println(tryJson.converterToJson(callReceiver.getCallDetails(????));
 
         Map map = new HashMap(); // Checking the JSON method
-        map.put("id","456789");
+        map.put("id",456789);
         map.put("name", "Vasya");
-        map.put("number", "45637829");
+        map.put("number", 45637829);
 
         System.out.println(tryJson.converterToJson(map));
     }
