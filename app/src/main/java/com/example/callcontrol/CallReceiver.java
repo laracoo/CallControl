@@ -10,7 +10,6 @@ import java.util.Map;
 import static com.example.callcontrol.Test.usersId;
 
 public class CallReceiver {
-
     public CallReceiver() {}
 
     public Map<String, String> getCallDetails(Context context) {
