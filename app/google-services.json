@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "221929494596",
-    "firebase_url": "https://callcontroler.firebaseio.com",
-    "project_id": "callcontroler",
-    "storage_bucket": "callcontroler.appspot.com"
+    "project_number": "336036227395",
+    "firebase_url": "https://callcontroler-7840b.firebaseio.com",
+    "project_id": "callcontroler-7840b",
+    "storage_bucket": "callcontroler-7840b.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:221929494596:android:4ffeffacf993bdd56e0411",
+        "mobilesdk_app_id": "1:336036227395:android:b0469cda9467543085a7f6",
         "android_client_info": {
           "package_name": "com.example.callcontrol"
         }
       },
       "oauth_client": [
         {
-          "client_id": "221929494596-al2f5vrmm9hq5gqeo268oo7l49qlqjvm.apps.googleusercontent.com",
+          "client_id": "336036227395-071n321fdkqnp80abo85ooq97arece64.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.callcontrol",
@@ -23,20 +23,20 @@
           }
         },
         {
-          "client_id": "221929494596-ka7rtskac5dhp2kj1mf2o5puf7o2df0d.apps.googleusercontent.com",
+          "client_id": "336036227395-buiacpaik7msh0tcogbia1l212r75riq.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBGU8eP8aBDoA2hy7jCRYXtFiKsfxuwVAg"
+          "current_key": "AIzaSyDQUnoR0Ujh7135QMVz3CkGf_PcE-KPzDw"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "221929494596-ka7rtskac5dhp2kj1mf2o5puf7o2df0d.apps.googleusercontent.com",
+              "client_id": "336036227395-buiacpaik7msh0tcogbia1l212r75riq.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

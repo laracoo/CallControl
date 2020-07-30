@@ -13,18 +13,15 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-
 import java.util.HashMap;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
-    private DatabaseReference databaseReference;
-    private final String CALL_KEY = "Calls";
+   // private DatabaseReference databaseReference;
+   // private final String CALL_KEY = "Calls";
 
-    Map<String, String> map = new HashMap<>(); // Checking the JSON method
+  //  Map<String, String> map = new HashMap<>(); // Checking the JSON method
 
 
     @Override
@@ -34,19 +31,19 @@ public class MainActivity extends AppCompatActivity {
         startService(new Intent(this, MyService.class));
 
 
-        map.put("id","456789");
-        map.put("name", "Vasya");
-        map.put("number", "45637829");
+       // map.put("id","456789");
+       // map.put("name", "Vasya");
+     //   map.put("number", "45637829");
     }
 
     public void onStartService(View view) {
         //String id = databaseReference.getKey();
         //CallReceiver callReceiver = new CallReceiver();
-        databaseReference = FirebaseDatabase.getInstance().getReference(CALL_KEY);
+      //  databaseReference = FirebaseDatabase.getInstance().getReference(CALL_KEY);
 
-        ConverterToJson converterToJson = new ConverterToJson();
+        //ConverterToJson converterToJson = new ConverterToJson();
        // converterToJson.converterToJson(callReceiver.getCallDetails(this)); // Must to be -->
-        databaseReference.push().setValue(converterToJson.converterToJson(map));
+      //  databaseReference.push().setValue(converterToJson.converterToJson(map));
     }
 
     public void onStopService(View view) { // Stop Service

@@ -9,13 +9,16 @@ import android.os.Build;
 import androidx.annotation.RequiresApi;
 import androidx.core.content.ContextCompat;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class App extends Application {
     public static final String CHANNEL_ID = "Channel";
+
 
     @Override
     public void onCreate() {
         super.onCreate();
-
         Intent serviceIntent = new Intent(this, MyService.class);
         serviceIntent.putExtra("inputextra", "App is running");
 
