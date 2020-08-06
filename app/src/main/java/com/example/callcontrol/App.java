@@ -10,7 +10,7 @@ import androidx.annotation.RequiresApi;
 import androidx.core.content.ContextCompat;
 
 
-public class App extends Application {
+public class  App extends Application {
     public static final String CHANNEL_ID = "Channel";
 
 

@@ -19,7 +19,7 @@ public class MyService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) { // Own service for our app running in foreground
-       Intent notificationIntent = new Intent(this, MainActivity.class);
+       Intent notificationIntent = new Intent(this, Main Activity.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(this,
                 0, notificationIntent,0);
 
