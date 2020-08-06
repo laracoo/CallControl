@@ -1,28 +1,23 @@
 package com.example.callcontrol;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.SystemClock;
+import android.util.Log;
 import android.view.View;
-import android.widget.Chronometer;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
-   // private DatabaseReference databaseReference;
-   // private final String CALL_KEY = "Calls";
-
-  //  Map<String, String> map = new HashMap<>(); // Checking the JSON method
-
+    private final String TAG = "calls";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,19 +26,31 @@ public class MainActivity extends AppCompatActivity {
         startService(new Intent(this, MyService.class));
 
 
-       // map.put("id","456789");
-       // map.put("name", "Vasya");
-     //   map.put("number", "45637829");
+
     }
 
     public void onStartService(View view) {
-        //String id = databaseReference.getKey();
-        //CallReceiver callReceiver = new CallReceiver();
-      //  databaseReference = FirebaseDatabase.getInstance().getReference(CALL_KEY);
+        Map map = new HashMap(); // Checking the JSON method
+        map.put("id",456789);
+        map.put("name", "Vasya");
+        map.put("number", 45637829);
 
-        //ConverterToJson converterToJson = new ConverterToJson();
-       // converterToJson.converterToJson(callReceiver.getCallDetails(this)); // Must to be -->
-      //  databaseReference.push().setValue(converterToJson.converterToJson(map));
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        db.collection("users")
+                .add(map)
+                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                    @Override
+                    public void onSuccess(DocumentReference documentReference) {
+                        Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w(TAG, "Error adding document", e);
+                    }
+                });
     }
 
     public void onStopService(View view) { // Stop Service
